@@ -30,7 +30,6 @@ for (let i = 0; i < 3; i++) {
         let sum = randomNumber1 + randomNumber2;
         if(sum === yourAnswer) {
             console.log(`Correct!`);
-            good = true;
         } else {
             console.log(`'${yourAnswer}' is wrong answer ;(. Correct answer was '${sum}'.\nLet's try again, ${mainUserName}!`)
             good = false;
@@ -41,7 +40,6 @@ for (let i = 0; i < 3; i++) {
         let vajitanyie = randomNumber1 - randomNumber2;
         if(vajitanyie === yourAnswer) {
             console.log(`Correct!`);
-            good = true;
         } else {
             console.log(`'${yourAnswer}' is wrong answer ;(. Correct answer was '${vajitanyie}'.\nLet's try again, ${mainUserName}!`)
             good = false;
@@ -52,7 +50,6 @@ for (let i = 0; i < 3; i++) {
         let multiplication = randomNumber1 * randomNumber2;
         if(multiplication === yourAnswer) {
             console.log(`Correct!`);
-            good = true;
         } else {
             console.log(`'${yourAnswer}' is wrong answer ;(. Correct answer was '${multiplication}'.\nLet's try again, ${mainUserName}!`)
             good = false;

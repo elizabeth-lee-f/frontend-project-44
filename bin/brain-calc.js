@@ -22,7 +22,7 @@ for (let i = 0; i < 3; i++) {
     let randomNumber2 = Math.floor(Math.random() * 100)
 
     console.log(`Question: ${randomNumber1} ${str1} ${randomNumber2}`);
-    const yourAnswer = readlineSync.question('Your answer:');
+    const yourAnswer = Number(readlineSync.question('Your answer:'));
 
 
 
@@ -60,7 +60,6 @@ for (let i = 0; i < 3; i++) {
     }
 }
 
-
-if(good) {
-    console.log(`Congratulations, ${mainUserName}!`)
-}
+    if(good) {
+        console.log(`Congratulations, ${mainUserName}!`)
+    }

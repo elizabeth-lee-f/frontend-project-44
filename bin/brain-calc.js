@@ -15,7 +15,7 @@ for (let i = 0; i < 3; i++) {
     let umnojenie = '*';
 
     let str = '+-*'
-    let randomSymbol = Math.round(Math.random() * str.length);
+    let randomSymbol = Math.round(Math.random() * (str.length - 1));
     let str1 = str.charAt(randomSymbol);
 
     let randomNumber1 = Math.floor(Math.random() * 100)
@@ -54,7 +54,7 @@ for (let i = 0; i < 3; i++) {
             console.log(`Correct!`);
             good = true;
         } else {
-            console.log(`'${yourAnswer}' is wrong answer ;(. Correct answer was '${umnojenie}'.\nLet's try again, ${mainUserName}!`)
+            console.log(`'${yourAnswer}' is wrong answer ;(. Correct answer was '${multiplication}'.\nLet's try again, ${mainUserName}!`)
             good = false;
         }
     }

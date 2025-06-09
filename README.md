@@ -14,3 +14,17 @@
 [Asciinema Brain-prime](https://asciinema.org/a/Kk7nEYnkdzfFfwzRLOBGg81jI)
 
 [Asciinema Brain-progression](https://asciinema.org/a/jWlcbUQC6DOQZsbk360bGkq9p)
+
+Установка:
+
+1. Скачайте репозиторий.
+
+2. Для глобальной установки пакета из локальной директории используйте команду npm link. Её необходимо запускать из корневой директории проекта.
+
+3. Для запуска игр используйте следующие команды:
+
+    brain-calc
+    brain-even
+    brain-gcd
+    brain-prime
+    brain-progression

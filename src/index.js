@@ -29,9 +29,13 @@ for (let i = 0; i < 3; i++) {
 
     switch(str1){
         case plus: res = randomNumber1 + randomNumber2;
+        break;
         case minus: res = randomNumber1 - randomNumber2;
-        case umnojenie:  res = randomNumber1 * randomNumber2; 
+        break;
+        case umnojenie: res = randomNumber1 * randomNumber2;
+        break;
     }
+
     if(res === yourAnswer) {
         console.log(`Correct!`);
     } else {
@@ -47,8 +51,8 @@ for (let i = 0; i < 3; i++) {
 
     }
 
-    export const BrainEven = () => {
-        let mainUserName = userName();
+export const BrainEven = () => {
+    let mainUserName = userName();
     console.log('Answer "yes" if the number is even, otherwise answer "no"')
     
     let good = true;
@@ -157,8 +161,6 @@ export const BrainPrime = () => {
         return true;
     }
 
-    function playBrainPrime() {
-
         let correctAnswers = 0;
         const rounds = 3;
 
@@ -168,23 +170,50 @@ export const BrainPrime = () => {
             const correctAnswer = isPrime(number) ? "yes" : "no";
 
             //запрос ответа
-            const userAnswer = prompt(`Question: ${number}\nYour answer:`)?.toLowerCase().trim();
+            const userAnswer = readlineSync.question(`Question: ${number}\nYour answer:`).toLowerCase().trim();
 
             //проверка ответа
             if (userAnswer === correctAnswer) {
                 correctAnswers++;
-                alert("Correct!");
+                console.log("Correct!");
             } else {
-                console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
+                console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${mainUserName}!`);
                 return;
             }
         }
-        console.log(`Congratulations, ${userName}!`);
+        console.log(`Congratulations, ${mainUserName}!`);
     }
 
-}
     
 export const BrainProgression = () => {
+
+    function generateProgressionQuestion () {
+
+        let countElements = Math.floor(Math.random() * 5) + 5;
+        let skipElement = Math.floor(Math.random() * countElements);
+        let firstNumber = Math.floor(Math.random() * 20);
+        let step = Math.floor(Math.random() * 4) + 1;
+
+        let question='';
+        let answer;
+
+        for (let i = 0; i < countElements; i++) {
+            
+            let currentElement = firstNumber + i * step;
+            
+            if(i === skipElement) {
+                question += ' ..';
+                answer = currentElement;
+            } else {
+                question += ` ${currentElement}`;
+            }
+        }
+                return {
+                    question: question,
+                    answer: answer
+                }
+    }
+
     let mainUserName = userName();
 
     console.log("What number is missing in the progression?");
@@ -195,17 +224,17 @@ export const BrainProgression = () => {
     while (correctAnswers < neededCorrect) {
         const {question, answer} = generateProgressionQuestion();
         console.log(`Question: ${question}`);
-        const userAnswer = parseInt(prompt("Your answer:"));
+        const userAnswer = Number(readlineSync.question('Your answer:'));
         
         if (userAnswer === answer) {
             console.log("Correct!");
             correctAnswers++;
         } else {
             console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
-            console.log(`Let's try again, ${playerName}!`);
-            break;
+            console.log(`Let's try again, ${mainUserName}!`);
+            return;
         }
     }
     
-    console.log(`Congratulations, ${playerName}!`);
+    console.log(`Congratulations, ${mainUserName}!`);
 }
